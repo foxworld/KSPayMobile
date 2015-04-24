@@ -1,10 +1,14 @@
 package kr.co.kspay.m.kspaymobile;
 
 import android.app.Activity;
+import android.app.DownloadManager;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -12,12 +16,13 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.File;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -124,10 +129,51 @@ public class MainActivity extends ActionBarActivity {
     }
 
     class MainWebViewClient extends WebViewClient {                          // 자기 자신 브라우져에 띄우기 위해  추가
+        // This will handle downloading. It requires Gingerbread, though
+        final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+
+        // This is where downloaded files will be written, using the package name isn't required
+        // but it's a good way to communicate who owns the directory
+        //final File destinationDir = new File (Environment.getExternalStorageDirectory(), getPackageName());
+        final File destinationDir = new File (Environment.getExternalStorageDirectory(), "download");
+
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             // TODO Auto-generated method stub
-            view.loadUrl(url);
+            boolean shouldOverride = false;
+            // We only want to handle requests for mp3 files, everything else the webview
+            // can handle normally
+            if (!destinationDir.exists()) {
+                destinationDir.mkdir(); // Don't forget to make the directory if it's not there
+            }
+            //if (url.endsWith(".zip") || url.endsWith(".jpg") || url.endsWith(".png") || url.endsWith(".doc") || url.endsWith(".pptx")) {
+            String extension = MimeTypeMap.getFileExtensionFromUrl(url);
+            MimeTypeMap mime = MimeTypeMap.getSingleton();
+            String mimeType = mime.getMimeTypeFromExtension(extension);
+            if (mimeType != null) {
+                Log.d("foxworld", "mimeType="+mimeType);
+                Log.d("foxworld", "extension="+extension);
+                if (mimeType.toLowerCase().contains("video")
+                        || mimeType.toLowerCase().contains("mov")
+                        || mimeType.toLowerCase().contains("mp3")
+                        || mimeType.toLowerCase().contains("officedocument")
+                        || mimeType.toLowerCase().contains("pdf")
+                        || mimeType.toLowerCase().contains("image")
+                        || mimeType.toLowerCase().contains("zip")) {
+                    shouldOverride = true;
+                    Uri source = Uri.parse(url);
+
+                    // Make a new request pointing to the mp3 url
+                    DownloadManager.Request request = new DownloadManager.Request(source);
+                    // Use the same file name for the destination
+                    File destinationFile = new File(destinationDir, source.getLastPathSegment());
+                    request.setDestinationUri(Uri.fromFile(destinationFile));
+                    Log.d("foxworld", destinationFile.toString());
+                    // Add it to the manager
+                    manager.enqueue(request);
+                }
+            }
+            //return shouldOverride;
             return super.shouldOverrideUrlLoading(view, url);
         }
 
