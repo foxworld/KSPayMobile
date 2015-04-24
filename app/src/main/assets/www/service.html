@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="./css/common.css">
+<html>
+<head>
+<script>
+function send_call(phone_numb)
+{
+	window.android.call(1, phone_numb);
+}	
+function send_email(email)
+{
+	/*email*/
+	window.android.call(2, email);
+}
+function click_button()
+{
+	alert("개발자:이훈구\n전화번호:02-3420-5844\n이메일:foxworld@ksnet.co.kr");
+}
+</script>
+</head>
+
+<body>
+<center><B><input type="button" name="test_alert" value="서비스관리" onClick="javascript:click_button()"></B></center><br>
+<table cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+        <tr>
+            <td width="10"></td>
+            <td style="padding-top: 6px" valign="top" width="7"><img height="3" width="3" alt="" src="img/img_bul_txt01.gif" /></td>
+            <td>고객이 인터넷 쇼핑몰에서 상품과 서비스를 구매하고, 이에 대한 대금을 신용카드 및 기타 결제수단 (가상계좌, 계좌이체, 휴대폰결제, 상품권결제, ARS결제 등)을 통해 안전하고 편리하게 결제할 수 있는 서비스입니다.</td>
+        </tr>
+        <tr>
+            <td height="10"></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="padding-top: 6px" valign="top"><img height="3" width="3" alt="" src="img/img_bul_txt01.gif" /></td>
+            <td>KSNET 전자지불결제(PG) 서비스인 KSPAY는 인터넷 전자상거래 업체와 국내 카드사, 은행을 하나로 연결, 전자지불결제의 핵심인 보안을 기본으로 안정된 서비스를 제공합니다.</td>
+        </tr>
+        <tr>
+            <td height="20"></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<table cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+		<tr>
+			<td width="10"></td>
+			<td style="padding-top: 6px" valign="top" width="7"><img height="3" width="3" alt="" src="img/img_bul_txt01.gif" /></td>
+			<td>대표전화</td>
+			<td>: <a href="javascript:send_call('1544-6303');">1544-6303<a></td>
+		</tr>		
+		<tr>
+			<td width="10"></td>
+			<td style="padding-top: 6px" valign="top" width="7"></td>
+			<td></td>
+			<td></td>
+		</tr>		
+		<tr>
+			<td width="10"></td>
+			<td style="padding-top: 6px" valign="top" width="7"><img height="3" width="3" alt="" src="img/img_bul_txt01.gif" /></td>
+			<td>Email</td>
+			<td>: <a href="javascript:send_email('kspay@ksnet.co.kr');">kspay@ksnet.co.kr<a></td>
+		</tr>		
+		<tr>
+			<td width="10"></td>
+			<td style="padding-top: 6px" valign="top" width="7"></td>
+			<td></td>
+			<td></td>
+		</tr>		
+		<tr>
+			<td width="10"></td>
+			<td style="padding-top: 6px" valign="top" width="7"><img height="3" width="3" alt="" src="img/img_bul_txt01.gif" /></td>
+			<td>민원담당자 </td>
+			<td>: <a href="javascript:send_call('0234205917');">이경랑대리(02-3420-5917)<a></td>
+		</tr>
+		<tr>
+			<td width="10"></td>
+			<td style="padding-top: 6px" valign="top" width="7"></td>
+			<td></td>
+			<td></td>
+		</tr>		
+		<tr>
+			<td width="10"></td>
+			<td style="padding-top: 6px" valign="top" width="7"><img height="3" width="3" alt="" src="img/img_bul_txt01.gif" /></td>
+			<td>민원책임자 </td>
+			<td>: <a href="javascript:send_call('0234205851');">최식팀장(02-3420-5851)</a></td>
+		</tr>
+		<tr>
+			<td width="10"></td>
+			<td style="padding-top: 6px" valign="top" width="7"></td>
+			<td></td>
+			<td></td>
+		</tr>		
+		<tr>
+			<td width="10"></td>
+			<td style="padding-top: 6px" valign="top" width="7"><img height="3" width="3" alt="" src="img/img_bul_txt01.gif" /></td>
+			<td>개발담당자 </td>
+			<td>: <a href="javascript:send_call('0234205844');">이훈구차장(02-3420-5844)</a></td>
+		</tr>
+		<tr>
+			<td width="10"></td>
+			<td style="padding-top: 6px" valign="top" width="7"></td>
+			<td></td>
+			<td></td>
+		</tr>		
+		<tr>
+			<td width="10"></td>
+			<td style="padding-top: 6px" valign="top" width="7"><img height="3" width="3" alt="" src="img/img_bul_txt01.gif" /></td>
+			<td>업무시간 </td>
+			<td>: <b>월-금 09:00~18:00 / 토,일,공휴일 휴무<b></td>
+		</tr>
+	</tbody>
+</table>
+
+</body>
+</html>

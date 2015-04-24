@@ -1,0 +1,37 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="로그인">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="auto_login_yn"
+            android:summary="자동로그인을 원하시면 선택해주세요!"
+            android:switchTextOn="ON"
+            android:switchTextOff="OFF"
+            android:title="자동로그인유무" />
+
+        <EditTextPreference
+            android:key="shop_id"
+            android:title="가맹점아이디"
+            android:summary="가맹점아이디를 입력하세요!"
+            android:defaultValue=""
+            android:inputType="text"
+            />
+        <EditTextPreference
+            android:key="shop_password"
+            android:title="비밀번호"
+            android:summary="비밀번호를 입력해주세요!"
+            android:defaultValue=""
+            android:inputType="textPassword"
+            android:password="true"
+            />
+        <ListPreference
+            android:key="login_time"
+            android:title="로그인유지시간"
+            android:summary="로그인유지시간을 입력하세요!"
+            android:defaultValue="10"
+            android:entries="@array/pref_login_time"
+            android:entryValues="@array/pref_login_time_values"
+            android:dialogTitle="로그인유지시간선택"
+            />
+    </PreferenceCategory>
+</PreferenceScreen>

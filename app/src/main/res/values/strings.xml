@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="BROADCASET_NOTICE">kr.co.kspay.m.kspaymobile.intent.ACTION_BROADCAST_NOTICE</string>
+    <string name="BROADCASET_CLOCK">kr.co.kspay.m.kspaymobile.intent.ACTION_BROADCAST_CLOCK</string>
+    <string name="NOTIFICATION_ID">0xffff0001</string>
+    <string name="login_url">https://ksims.ksnet.co.kr/MOBILE/SCREEN/COB/COBMEM04M0.html</string>
+    <string name="logout_url">https://ksims.ksnet.co.kr/MOBILE/SCREEN/COB/COBMEM04M0.html</string>
+    <string name="moira_url">http://moira.ksnet.co.kr/DeskPlusMobile/Portal/Default.aspx</string>
+    <string name="yunasea_url1">http://www.catsroof.com/webapp/</string>
+    <string name="yunasea_url">http://192.168.251.15/webapp/</string>
+    <string name="yunasea_menu_click_javascript">javascript:$(\'#site_header_menuicon\').click();</string>
+    <string name="SMS_RECEIVED">android.provider.Telephony.SMS_RECEIVED</string>
+    <string name="notices_url">http://best.mqoo.com/</string>
+    <string name="help_url">file:///android_asset/www/service.html</string>
+    <string name="login_javascript">javascript:$(\'#user_id\').val(\"%1$s\");$(\'#password\').val(\"%2$s\");$(\'#btn_login\').click();</string>
+    <string name="login_javascript_moira">javascript:$(\'#tbLoginID\').val(\"%1$s\");$(\'#tbPassword\').val(\"%2$s\");$(\'#submit\').click();</string>
+    <string name="logout_javascript">javascript:mKsims.clearWebStorage( \"S\" );</string>
+    <string name="logout_javascript_moira">javascript:forcelogout();</string>
+    <string name="network_error_url">file:///android_asset/www/network_error.html</string>
+    <string name="cordova_url">file:///android_asset/www/index.html</string>
+    <string name="camera_url">file:///android_asset/www/camera.html</string>
+    <string name="title_activity_main">KSPayMobile</string>
+    <string name="title_activity_splash">Splash</string>
+    <string name="title_activity_notices">공지사항</string>
+    <string name="app_name">KSPay Mobile</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">설정</string>
+    <string name="alert_sms_title">KSPAY공지</string>
+    <string name="alert_title">알림</string>
+    <string name="action_settings">설정</string>
+    <string name="start_title">KSPay Mobile 서비스를 시작합니다</string>
+    <string name="back_button_finish_message">"\'뒤로\'버튼을 한번 더 누르시면 종료됩니다."</string>
+    <string name="show_network_error_message">"네트워크 연결이 필요합니다.\n확인 후 다시 실행해주세요."</string>
+    <string name="page_error_message">페이지를 열수가 없습니다!</string>
+    <string name="page_waiting_message">잠시만 기다려주세요!</string>
+    <string name="title_activity_notices2">Notices2Activity</string>
+    <string name="title_activity_phone_gap">PhoneGapActivity</string>
+    <string name="album_name">CameraSample</string>
+    <string name="title_activity_google_play_services">GooglePlayServicesActivity</string>
+    <string name="title_activity_yuna_sea">YunaSea</string>
+    <string name="title_activity_yuna_sea2">YunaSea2</string>
+
+</resources>
